@@ -1,0 +1,138 @@
+html,
+body
+{
+  padding: 0;
+  margin: 0;
+  font-family: "Century Gothic";
+  background-color:#572e1c;
+}
+
+/* hide horizontal scrollbars, since we use the vertical ones to scroll to the right */
+body
+{
+  overflow-x: hidden;
+  }
+
+h1
+{
+  font-size: 36px;
+  font-weight: bold;
+  color: white;
+  position:fixed;
+  margin-left:40px;
+}
+
+/**
+  * important: keep position fixed, you can however use top:0 instead of bottom:0
+  * if you want to make it stick to the top of the browser
+  */
+.scroll
+{
+  position: fixed;
+  top: 100px;
+  left: 0;
+}
+
+.caption
+{
+	font-family:"century gothic"; 
+	font-weight:bold; 
+	width:500px; height:100px;  
+	margin-left:20px; 
+	float:left;
+	color:white;
+	}
+
+/**
+  * z-index ordering of the different layers, do this for your layers,
+  * also assign absolute width (to prevent issues if the script gets executed before the images get loaded)
+  */
+.horizon
+{
+	z-index:1;
+  width: 4000px;
+}
+
+.middle
+{
+  z-index: 500;
+  width: 4000px;
+}
+
+.front
+{
+  z-index: 1000;
+  width: 4000px;
+  
+}
+
+.scroll img
+{
+	float:left; 
+	margin-left:20px;
+	width:600px;
+	height:480px;
+	border:2px solid white;
+	
+	z-index:10;
+}
+
+.scroll img:hover{
+	border:0px;
+	width:610px;
+	height:480px;
+	box-shadow:0px 0px 20px #fff;
+	}
+
+.box
+{
+	width:620px; 
+	height:100px;  
+	margin-left:20px; 
+	float:left;
+}
+.image
+{
+	width:auto;
+	height:auto;
+	position:fixed;
+	margin-top:1px;
+	z-index:100;
+}
+
+.des
+{
+	width:600px;
+	height:480px;
+	position:absolute;
+	background-color:black;
+	margin-left:21px;
+	margin-top:1px;
+	z-index:1;
+}
+      .black_overlay{
+            display: none;
+            position: absolute;
+            top: -100%;
+            left: 0%;
+            width: 6000px;
+            height: 6000px;
+            background-color: black;
+            z-index:1001;
+            -moz-opacity: 0.8;
+            opacity:.80;
+            filter: alpha(opacity=80);
+        }
+        .white_content {
+            display: none;
+            position: absolute;
+            top: 0px;
+            left: 10%;
+            width: 500px;
+            height: 300px;
+            padding: 16px;
+            border: 16px solid orange;
+            background-color: white;
+            z-index:1002;
+            overflow: auto;
+        }
